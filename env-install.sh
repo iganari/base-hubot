@@ -10,6 +10,22 @@ BASEPATH=$(cd `dirname $0`; pwd)
 yum -y install epel-release
 rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 ### yum -y install --enablerepo=remi-php56,remi,epel vim-enhanced php php-opcache php-devel php-mbstring php-mcrypt php-mysqlnd php-phpunit-PHPUnit php-pecl-xdebug php-pecl-xhprof php-fpm php-pdo php-mcrypt php-pecl-memcached php-pecl-msgpack
+
+yum install -y vim-enhanced 
+yum install -y --enablerepo=epel nodejs npm redis
+# yum install npm    --enablerepo=epel -y
+# yum install redis  --enablerepo=epel -y
+
+### setting redis
+service   redis restart
+chkconfig redis on
+
+### install hubot set
+npm install -g n
+n stable
+npm install -g inherits coffee-script hubot
+
+
 ### 
 ### ### setting php 
 ### mv  /etc/php.ini /etc/php.ini.bk  
