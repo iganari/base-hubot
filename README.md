@@ -7,3 +7,8 @@ $ install.sh
 ```
 
 を実行
+
+
+
++ Trelloとの連携
+    + https://github.com/adunkman/node-trello
